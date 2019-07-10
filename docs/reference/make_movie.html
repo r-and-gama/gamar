@@ -229,21 +229,54 @@ animation, see <code><a href='https://www.rdocumentation.org/packages/animation/
     <pre class="examples"><div class='input'><span class='co'># Load an experiment</span>
 <span class='no'>exp</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='load_experiment.html'>load_experiment</a></span>(<span class='st'>"prey_predator"</span>,
                        <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"models/predator_prey/models"</span>,
-                                   <span class='st'>"predator_prey.gaml"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"rama"</span>))</div><div class='output co'>#&gt; Loading experiment "prey_predator" from file ""...</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>An error has occurred in gama.</span>
-#&gt; <span class='message'>See the log file/Users/mac/Desktop/rama/docs/reference/read_gaml.log</span></div><div class='output co'>#&gt; <span class='error'>Error in read_gaml_experiment(exp, model): Gama fails to read your experiment</span></div><div class='input'>
+                                   <span class='st'>"predator_prey.gaml"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamar"</span>))</div><div class='output co'>#&gt; Loading experiment "prey_predator" from file "predator_prey.gaml"...</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Periods of observation ("obsrates") are converted into integers.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Final time step ("tmax") is converted into integer.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Seed is converted into numeric.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Parameters' types are cast according to model definition</div><div class='output co'>#&gt; </div><div class='input'>
 <span class='co'># to explore the parameters and the observed variables</span>
-<span class='fu'><a href='parameters.html'>parameters</a></span>(<span class='no'>exp</span>)</div><div class='output co'>#&gt; [1] "Unknown class"</div><div class='input'><span class='fu'><a href='obs_rates.html'>obs_rates</a></span>(<span class='no'>exp</span>)</div><div class='output co'>#&gt; [1] "Unknown class"</div><div class='input'>
+<span class='fu'><a href='parameters.html'>parameters</a></span>(<span class='no'>exp</span>)</div><div class='output co'>#&gt;   p_Initial_number_of_preys_ p_Prey_max_energy_ p_Prey_max_transfert_
+#&gt; 1                        200                  1                   0.1
+#&gt;   p_Prey_energy_consumption_ p_Initial_number_of_predators_
+#&gt; 1                       0.05                             20
+#&gt;   p_Predator_max_energy_ p_Predator_energy_transfert_
+#&gt; 1                      1                          0.5
+#&gt;   p_Predator_energy_consumption_ p_Prey_probability_reproduce_
+#&gt; 1                           0.02                          0.01
+#&gt;   p_Prey_nb_max_offsprings_ p_Prey_energy_reproduce_
+#&gt; 1                         5                      0.5
+#&gt;   p_Predator_probability_reproduce_ p_Predator_nb_max_offsprings_
+#&gt; 1                              0.01                             3
+#&gt;   p_Predator_energy_reproduce_
+#&gt; 1                          0.5</div><div class='input'><span class='fu'><a href='obs_rates.html'>obs_rates</a></span>(<span class='no'>exp</span>)</div><div class='output co'>#&gt;   r_Number_of_preys r_Number_of_predators r_main_display r_info_display
+#&gt; 1                 1                     1              1              1
+#&gt;   r_Population_information
+#&gt; 1                        1</div><div class='input'>
 <span class='co'># to set the experiment</span>
-<span class='no'>exp</span>$<span class='no'>p_Initial_number_of_preys_</span> <span class='kw'>&lt;-</span> <span class='fl'>990L</span></div><div class='output co'>#&gt; <span class='error'>Error in exp$p_Initial_number_of_preys_ &lt;- 990L: object of type 'builtin' is not subsettable</span></div><div class='input'><span class='no'>exp</span>$<span class='no'>p_Initial_number_of_predators_</span> <span class='kw'>&lt;-</span> <span class='fl'>100L</span></div><div class='output co'>#&gt; <span class='error'>Error in exp$p_Initial_number_of_predators_ &lt;- 100L: object of type 'builtin' is not subsettable</span></div><div class='input'><span class='no'>exp</span>$<span class='no'>p_Predator_probability_reproduce_</span> <span class='kw'>&lt;-</span> <span class='fl'>0.1</span></div><div class='output co'>#&gt; <span class='error'>Error in exp$p_Predator_probability_reproduce_ &lt;- 0.1: object of type 'builtin' is not subsettable</span></div><div class='input'><span class='no'>exp</span>$<span class='no'>tmax</span> <span class='kw'>&lt;-</span> <span class='fl'>100L</span></div><div class='output co'>#&gt; <span class='error'>Error in exp$tmax &lt;- 100L: object of type 'builtin' is not subsettable</span></div><div class='input'>
+<span class='no'>exp</span>$<span class='no'>p_Initial_number_of_preys_</span> <span class='kw'>&lt;-</span> <span class='fl'>990L</span>
+<span class='no'>exp</span>$<span class='no'>p_Initial_number_of_predators_</span> <span class='kw'>&lt;-</span> <span class='fl'>100L</span>
+<span class='no'>exp</span>$<span class='no'>p_Predator_probability_reproduce_</span> <span class='kw'>&lt;-</span> <span class='fl'>0.1</span>
+<span class='no'>exp</span>$<span class='no'>tmax</span> <span class='kw'>&lt;-</span> <span class='fl'>100L</span>
+
 <span class='co'># to run the experiment</span>
-<span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='run_experiment.html'>run_experiment</a></span>(<span class='no'>exp</span>, <span class='kw'>hpc</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in if (ncol(obs_rates(exp)) == 0) return(exp): argument is of length zero</span></div><div class='input'>
+<span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='run_experiment.html'>run_experiment</a></span>(<span class='no'>exp</span>, <span class='kw'>hpc</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; if "display" equal TRUE, "save" is automatically set to  TRUE.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Outputs are saved to "/Users/mac/Desktop/gamar/docs/reference" by default.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Outputs are saved in " /Users/mac/Desktop/gamar/docs/reference/prey_predator ".</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Running experiment plan... </div><div class='input'>
 <span class='co'># to visualize the output</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/with'>with</a></span>(<span class='no'>out</span>$<span class='no'>output</span><span class='kw'>[[</span><span class='fl'>1</span>]],
-    <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>Step</span>, <span class='no'>`r_Number_of_preys`</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"l"</span>, <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"red"</span>))</div><div class='output co'>#&gt; <span class='error'>Error in with(out$output[[1]], plot(Step, r_Number_of_preys, type = "l",     lwd = 2, col = "red")): object 'out' not found</span></div><div class='input'>
+    <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>Step</span>, <span class='no'>`r_Number_of_preys`</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"l"</span>, <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"red"</span>))</div><div class='img'><img src='make_movie-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># to make a movie</span>
-<span class='no'>path_movie</span> <span class='kw'>&lt;-</span> <span class='fu'>make_movie</span>(<span class='no'>out</span>, <span class='st'>"r_main_display"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in nrow(exp): object 'out' not found</span></div><div class='input'>
+<span class='no'>path_movie</span> <span class='kw'>&lt;-</span> <span class='fu'>make_movie</span>(<span class='no'>out</span>, <span class='st'>"r_main_display"</span>)
+
 <span class='co'># to print the result, it is necessary to have the package `magick`</span>
-<span class='kw pkg'>magick</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/magick/topics/editing'>image_read</a></span>(<span class='no'>path_movie</span>)</div><div class='output co'>#&gt; <span class='error'>Error in magick::image_read(path_movie): object 'path_movie' not found</span></div></pre>
+<span class='kw pkg'>magick</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/magick/topics/editing'>image_read</a></span>(<span class='no'>path_movie</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 100 x 7</span><span>
+#&gt;    format width height colorspace matte filesize density
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  
+#&gt; </span><span style='color: #555555;'> 1</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'> 2</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'> 3</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'> 4</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'> 5</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'> 6</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'> 7</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'> 8</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'> 9</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'>10</span><span> GIF      500    500 sRGB       FALSE  3</span><span style='text-decoration: underline;'>598</span><span>285 72x72  
+#&gt; </span><span style='color: #555555;'># … with 90 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

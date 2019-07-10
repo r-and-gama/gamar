@@ -4,8 +4,6 @@ pkgdown_sha: ~
 articles:
   example1: example1.html
   example2: example2.html
-  example3: example3.html
-  example4: example4.html
   gamar: gamar.html
   gamar1: gamar1.html
   gamar2: gamar2.html

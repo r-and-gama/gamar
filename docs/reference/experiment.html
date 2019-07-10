@@ -250,7 +250,7 @@ that specifies the full model.</p>
   <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(<span class='kw'>S</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>I</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>R</span> <span class='kw'>=</span> <span class='fl'>1</span>),
   <span class='fl'>1000</span>, <span class='fl'>1</span>, <span class='st'>"sir"</span>, <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"models"</span>, <span class='st'>"sir.gaml"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamar"</span>))</div><div class='output co'>#&gt; Periods of observation ("obsrates") are converted into integers.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Final time step ("tmax") is converted into integer.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Parameters' types are cast according to model definition</div><div class='output co'>#&gt; </div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>exp0</span>)</div><div class='output co'>#&gt; Experiment with 1 simulation of 5 parameters and 3 observed variables
 #&gt; experiment name:  sir 
-#&gt; input gaml file:  /Users/mac/Desktop/rama/inst/models/sir.gaml 
+#&gt; input gaml file:  /Users/mac/Desktop/gamar/inst/models/sir.gaml 
 #&gt; model parameters:    p_S0, p_I0, p_R0, p_beta, p_gamma 
 #&gt; observed variables:  r_S, r_I, r_R 
 #&gt; Experiment overview:
@@ -275,7 +275,7 @@ that specifies the full model.</p>
 <span class='no'>sir1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='load_experiment.html'>load_experiment</a></span>(<span class='st'>"sir"</span>,
                         <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"models"</span>, <span class='st'>"sir.gaml"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"gamar"</span>))</div><div class='output co'>#&gt; Loading experiment "sir" from file "sir.gaml"...</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Periods of observation ("obsrates") are converted into integers.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Final time step ("tmax") is converted into integer.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Seed is converted into numeric.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Parameters' types are cast according to model definition</div><div class='output co'>#&gt; </div><div class='input'><span class='no'>sir1</span></div><div class='output co'>#&gt; Experiment with 1 simulation of 5 parameters and 3 observed variables
 #&gt; experiment name:  sir 
-#&gt; input gaml file:  /Users/mac/Desktop/rama/inst/models/sir.gaml 
+#&gt; input gaml file:  /Users/mac/Desktop/gamar/inst/models/sir.gaml 
 #&gt; model parameters:    p_S0, p_I0, p_R0, p_beta, p_gamma 
 #&gt; observed variables:  r_S, r_I, r_R 
 #&gt; Experiment overview:
@@ -286,7 +286,7 @@ that specifies the full model.</p>
 <span class='no'>sir2</span>$<span class='no'>p_S0</span> <span class='kw'>&lt;-</span> <span class='fl'>2</span>
 <span class='no'>sir2</span></div><div class='output co'>#&gt; Experiment with 1 simulation of 5 parameters and 3 observed variables
 #&gt; experiment name:  sir 
-#&gt; input gaml file:  /Users/mac/Desktop/rama/inst/models/sir.gaml 
+#&gt; input gaml file:  /Users/mac/Desktop/gamar/inst/models/sir.gaml 
 #&gt; model parameters:    p_S0, p_I0, p_R0, p_beta, p_gamma 
 #&gt; observed variables:  r_S, r_I, r_R 
 #&gt; Experiment overview:
@@ -295,7 +295,7 @@ that specifies the full model.</p>
 <span class='no'>sir2</span>$<span class='no'>r_R</span> <span class='kw'>&lt;-</span> <span class='kw'>NULL</span>
 <span class='no'>sir2</span></div><div class='output co'>#&gt; Experiment with 1 simulation of 5 parameters and 2 observed variables
 #&gt; experiment name:  sir 
-#&gt; input gaml file:  /Users/mac/Desktop/rama/inst/models/sir.gaml 
+#&gt; input gaml file:  /Users/mac/Desktop/gamar/inst/models/sir.gaml 
 #&gt; model parameters:    p_S0, p_I0, p_R0, p_beta, p_gamma 
 #&gt; observed variables:  r_S, r_I 
 #&gt; Experiment overview:

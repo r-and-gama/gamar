@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Experiment_plan>
+ <Simulation id="1" seed="1" finalStep="100" sourcePath="/Users/mac/Desktop/gamar/inst/models/predator_prey/models/predator_prey.gaml" experiment="prey_predator">
+  <Parameters>
+   <Parameter name="Initial number of preys: " type="INT" value="990"/>
+   <Parameter name="Prey max energy: " type="FLOAT" value="1"/>
+   <Parameter name="Prey max transfert: " type="FLOAT" value="0.1"/>
+   <Parameter name="Prey energy consumption: " type="FLOAT" value="0.05"/>
+   <Parameter name="Initial number of predators: " type="INT" value="100"/>
+   <Parameter name="Predator max energy: " type="FLOAT" value="1"/>
+   <Parameter name="Predator energy transfert: " type="FLOAT" value="0.5"/>
+   <Parameter name="Predator energy consumption: " type="FLOAT" value="0.02"/>
+   <Parameter name="Prey probability reproduce: " type="FLOAT" value="0.01"/>
+   <Parameter name="Prey nb max offsprings: " type="INT" value="5"/>
+   <Parameter name="Prey energy reproduce: " type="FLOAT" value="0.5"/>
+   <Parameter name="Predator probability reproduce: " type="FLOAT" value="0.1"/>
+   <Parameter name="Predator nb max offsprings: " type="INT" value="3"/>
+   <Parameter name="Predator energy reproduce: " type="FLOAT" value="0.5"/>
+  </Parameters>
+  <Outputs>
+   <Output id="0" name="Number of preys" framerate="1"/>
+   <Output id="1" name="Number of predators" framerate="1"/>
+   <Output id="2" name="main_display" framerate="1"/>
+   <Output id="3" name="info_display" framerate="1"/>
+   <Output id="4" name="Population_information" framerate="1"/>
+  </Outputs>
+ </Simulation>
+</Experiment_plan>

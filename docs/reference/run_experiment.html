@@ -201,7 +201,7 @@ specified, current working directory is used to save the outputs.</p></td>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>We advice the user to validate their model in Gama Platform before using
-rama.<br /><br />
+rgamar.<br /><br />
 When the argument <code>save</code> is equal to <code>TRUE</code>, a folder with the name
 of the experiment of the object <code>exp</code> is created. The folder contains
 two folder: <code>output</code> containing the result in XML and <code>input</code>
@@ -227,7 +227,7 @@ is returned with <code>NA</code>.</p>
 <span class='no'>exp1</span>$<span class='no'>tmax</span> <span class='kw'>&lt;-</span> <span class='fl'>2L</span>
 <span class='no'>output</span> <span class='kw'>&lt;-</span> <span class='fu'>run_experiment</span>(<span class='no'>exp1</span>, <span class='kw'>hpc</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; Running experiment plan... </div><div class='input'><span class='no'>output</span></div><div class='output co'>#&gt; Experiment with 2 simulations of 5 parameters and 3 observed variables
 #&gt; experiment name:  sir 
-#&gt; input gaml file:  /Users/mac/Desktop/rama/inst/models/sir.gaml 
+#&gt; input gaml file:  /Users/mac/Desktop/gamar/inst/models/sir.gaml 
 #&gt; model parameters:    p_S0, p_I0, p_R0, p_beta, p_gamma 
 #&gt; observed variables:  r_S, r_I, r_R 
 #&gt; Experiment overview:
@@ -235,7 +235,7 @@ is returned with <code>NA</code>.</p>
 #&gt; 1  999    1    0    1.5    0.15   1   1   2    2    1 &lt;data.frame[2,4]&gt;
 #&gt; 2  999    1    0    1.5    0.15   1   1   3    2    1 &lt;data.frame[2,4]&gt;</div><div class='input'>
 <span class='co'># to save the experiment input and output (by default in the working directory)</span>
-<span class='no'>output</span> <span class='kw'>&lt;-</span> <span class='fu'>run_experiment</span>(<span class='no'>exp1</span>, <span class='kw'>hpc</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>save</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; Outputs are saved to "/Users/mac/Desktop/rama/docs/reference" by default.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Outputs are saved in " /Users/mac/Desktop/rama/docs/reference/sir ".</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Running experiment plan... </div></pre>
+<span class='no'>output</span> <span class='kw'>&lt;-</span> <span class='fu'>run_experiment</span>(<span class='no'>exp1</span>, <span class='kw'>hpc</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>save</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; Outputs are saved to "/Users/mac/Desktop/gamar/docs/reference" by default.</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Outputs are saved in " /Users/mac/Desktop/gamar/docs/reference/sir ".</div><div class='output co'>#&gt; </div><div class='output co'>#&gt; Running experiment plan... </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
