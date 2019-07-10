@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simulation id="1" >
+	<Step id='0' >
+		<Variable name='Number of preys' type='INT'>840</Variable>
+		<Variable name='Number of predators' type='INT'>29</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-0.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-0.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-0.png</Variable>
+	</Step>
+	<Step id='1' >
+		<Variable name='Number of preys' type='INT'>715</Variable>
+		<Variable name='Number of predators' type='INT'>29</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-1.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-1.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-1.png</Variable>
+	</Step>
+	<Step id='2' >
+		<Variable name='Number of preys' type='INT'>706</Variable>
+		<Variable name='Number of predators' type='INT'>30</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-2.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-2.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-2.png</Variable>
+	</Step>
+	<Step id='3' >
+		<Variable name='Number of preys' type='INT'>635</Variable>
+		<Variable name='Number of predators' type='INT'>32</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-3.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-3.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-3.png</Variable>
+	</Step>
+	<Step id='4' >
+		<Variable name='Number of preys' type='INT'>624</Variable>
+		<Variable name='Number of predators' type='INT'>33</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-4.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-4.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-4.png</Variable>
+	</Step>
+	<Step id='5' >
+		<Variable name='Number of preys' type='INT'>575</Variable>
+		<Variable name='Number of predators' type='INT'>34</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-5.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-5.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-5.png</Variable>
+	</Step>
+	<Step id='6' >
+		<Variable name='Number of preys' type='INT'>560</Variable>
+		<Variable name='Number of predators' type='INT'>39</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-6.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-6.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-6.png</Variable>
+	</Step>
+	<Step id='7' >
+		<Variable name='Number of preys' type='INT'>513</Variable>
+		<Variable name='Number of predators' type='INT'>43</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-7.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-7.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-7.png</Variable>
+	</Step>
+	<Step id='8' >
+		<Variable name='Number of preys' type='INT'>484</Variable>
+		<Variable name='Number of predators' type='INT'>48</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-8.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-8.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-8.png</Variable>
+	</Step>
+	<Step id='9' >
+		<Variable name='Number of preys' type='INT'>459</Variable>
+		<Variable name='Number of predators' type='INT'>57</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-9.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-9.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-9.png</Variable>
+	</Step>
+	<Step id='10' >
+		<Variable name='Number of preys' type='INT'>440</Variable>
+		<Variable name='Number of predators' type='INT'>62</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-10.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-10.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-10.png</Variable>
+	</Step>
+	<Step id='11' >
+		<Variable name='Number of preys' type='INT'>412</Variable>
+		<Variable name='Number of predators' type='INT'>69</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-11.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-11.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-11.png</Variable>
+	</Step>
+	<Step id='12' >
+		<Variable name='Number of preys' type='INT'>391</Variable>
+		<Variable name='Number of predators' type='INT'>74</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-12.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-12.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-12.png</Variable>
+	</Step>
+	<Step id='13' >
+		<Variable name='Number of preys' type='INT'>361</Variable>
+		<Variable name='Number of predators' type='INT'>82</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-13.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-13.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-13.png</Variable>
+	</Step>
+	<Step id='14' >
+		<Variable name='Number of preys' type='INT'>348</Variable>
+		<Variable name='Number of predators' type='INT'>96</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-14.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-14.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-14.png</Variable>
+	</Step>
+	<Step id='15' >
+		<Variable name='Number of preys' type='INT'>324</Variable>
+		<Variable name='Number of predators' type='INT'>105</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-15.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-15.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-15.png</Variable>
+	</Step>
+	<Step id='16' >
+		<Variable name='Number of preys' type='INT'>313</Variable>
+		<Variable name='Number of predators' type='INT'>116</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-16.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-16.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-16.png</Variable>
+	</Step>
+	<Step id='17' >
+		<Variable name='Number of preys' type='INT'>284</Variable>
+		<Variable name='Number of predators' type='INT'>123</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-17.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-17.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-17.png</Variable>
+	</Step>
+	<Step id='18' >
+		<Variable name='Number of preys' type='INT'>260</Variable>
+		<Variable name='Number of predators' type='INT'>129</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-18.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-18.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-18.png</Variable>
+	</Step>
+	<Step id='19' >
+		<Variable name='Number of preys' type='INT'>238</Variable>
+		<Variable name='Number of predators' type='INT'>140</Variable>
+		<Variable name='main_display' type='DISPLAY2D'>main_display1-19.png</Variable>
+		<Variable name='info_display' type='DISPLAY2D'>info_display1-19.png</Variable>
+		<Variable name='Population_information' type='DISPLAY2D'>Population_information1-19.png</Variable>
+	</Step>
+</Simulation>

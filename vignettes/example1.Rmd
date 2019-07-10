@@ -1,0 +1,70 @@
+---
+title: "Example: SIR model"
+output: rmarkdown::html_vignette
+knit: (function(inputFile, encoding, output_dir) { 
+      rmarkdown::render(inputFile,
+                        encoding=encoding, 
+                        output_dir=paste0(dirname(normalizePath(getwd())), "/inst/doc"))})
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r library}
+# install and load the package
+#install.packages("devtools")
+#devtools::install_github("r-and-gama/gamar")
+library(gamar)
+
+# if necessary to configure GAMA path
+# defpath("/Applications/Gama.app")
+```
+
+```{r}
+# Load the experiment "sir" from the definition of the model sir.gaml
+exp <- load_experiment("sir",
+                       system.file("models",
+                                   "sir.gaml", package = "gamar"))
+exp
+
+```
+
+```{r set_experiment}
+# Define a first type of experiments on SIR having the same initial value
+# called expA with S0=950, I0=50 and R0=0
+exp$p_S0 <- 950L
+exp$p_I0 <- 50L
+exp$p_R0 <- 0L
+# ... and with 100 steps and a frame rate of 1 for the images of the
+# susceptibles
+exp$tmax <- 100L
+exp$r_S <- 1L
+# Define a two experiments on this model
+exp <- repl(exp, 2)
+exp$p_beta <- c(0.3, 0.5)
+exp$p_gamma <- 0.1
+
+```
+
+```{r run_experiment}
+# Execute all the experiments in the plan
+out <- run_experiment(exp, hpc = 2)
+out
+```
+
+```{r visualize_experiment}
+# Visualize the number of infected for the two experiments
+with(out$output[[1]], plot(Step, r_I, type = "l", lwd = 2, col = "red"))
+with(out$output[[2]], plot(Step, r_I, type = "l", lwd = 2, col = "blue"))
+```
+

@@ -1,0 +1,55 @@
+Package: gamar
+Type: Package
+Title: An R Interface to the GAMA Simulation Platform
+Version: 0.1.0
+Authors@R: c(person("Marc", "Choisy", 
+                    email = "marc.choisy@ird.fr", 
+                    role = c("aut", "cre"),
+                    comment = c(ORCID = "0000-0002-5187-6390")),
+             person("Lucie", "Contamin", 
+                    email = "contamin.lucie@gmail.com", 
+                    role = "aut",
+                    comment = c(ORCID = "0000-0001-5797-1279")),
+             person("Benoît", "Gaudou", 
+                    email = "benoit.gaudou@ut-capitole.fr", 
+                    role = "ctb",
+                    comment = c(ORCID = "0000-0002-9005-3004")),
+             person("Bich Hai", "Ho", 
+                    email = "hobichhai@gmail.com", 
+                    role = "aut",
+                    comment = c(ORCID = "0000-0002-6344-0180")),
+             person("Viet Thanh", "Le", 
+                    email = "lethanhx2k@gmail.com", 
+                    role = "ctb",
+                    comment = c(ORCID = "0000-0002-2106-8130")),
+             person("Nicolas", "Marilleau", 
+                    email = "nicolas.marilleau@ird.fr", 
+                    role = "aut",
+                    comment = c(ORCID = "0000-0002-1004-4352")),
+             person("Jean-Daniel", "Zucker", 
+                    email = "jean-daniel.zucker@ird.fr", 
+                    role = "aut",
+                    comment = c(ORCID = "0000-0002-5597-7922")),
+             person("IRD", role = c("cph", "fnd")),
+             person("OUCRU", role = c("cph", "fnd")))
+Maintainer: Marc Choisy <marc.choisy@ird.fr>
+Description: An R Interface to the GAMA Simulation Platform.
+License: MIT + file LICENSE
+URL: https://github.com/r-and-gama/gamar
+BugReports: https://github.com/r-and-gama/gamar/issues
+Encoding: UTF-8
+Depends:
+    R (>= 2.10)
+Imports:
+    animation,
+    XML,
+    plot3D,
+    downloader
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    magick,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr

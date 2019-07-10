@@ -1,0 +1,94 @@
+development:
+  mode: unreleased
+
+
+authors:
+  Marc Choisy:
+    href: http://marcchoisy.free.fr
+  Jean-Daniel Zucker:
+    href: http://www-poleia.lip6.fr/~zucker
+  Viet Thanh Le:
+    href: https://quadram.ac.uk/people/thanh-le-viet
+  Benoît Gaudou:
+    href: https://scholar.google.com.vn/citations?user=-hv1aHYAAAAJ&hl=en
+  IRD:
+    href: http://www.ird.fr
+    html: <img src="reference/figures/ird.png" height="20" />
+  OUCRU:
+    href: http://www.oucru.org
+    html: <img src="reference/figures/oucru.png" height="35" />
+  Nicolas Marilleau:
+    href: https://scholar.google.fr/citations?user=DJFy6n0AAAAJ&hl=en
+  Bich Hai Ho:
+    href: https://www.semanticscholar.org/author/Bich-Hai-Ho/31585952
+  Lucie Contamin:
+    href: https://www.researchgate.net/profile/Lucie_Contamin
+
+
+reference:
+  - title: Configuring the gamar package
+    contents:
+    - defpath
+    - is_gama_installed
+    - setup_gama
+  - title: Constructor of experiment class
+    contents:
+    - as_experiment
+    - experiment
+    - is.experiment
+    - map_experiment
+  - title: Reading GAML files
+    contents:
+    - load_experiment
+    - save_to_gama
+  - title: Manipulating experiment objects
+    contents:
+    - fullfact
+    - make_movie
+    - model
+    - name
+    - obs_rates
+    - parameters
+    - plot_params
+    - repl
+  - title: Running experiments
+    contents:
+    - call_gama
+    - run_experiment
+    - save_to_gama
+  - title: Built-in experiments
+    contents:
+    - sir1
+
+
+navbar:
+  type: default
+  left:
+  - icon: fa-home fa-lg
+    href: index.html
+  - text: Get started
+    href: articles/gamar.html
+  - text: Tutorials
+    menu:
+    - text: Testing hypotheses
+      href: articles/gamar1.html
+    - text: Sensitivity analysis
+      href: articles/gamar2.html
+    - text: Parameters estimation
+      href: articles/gamar3.html
+    - text: Comparing ODE, IBM and ABM
+      href: articles/gamar4.html
+  - text: Examples
+    menu:
+    - text: SIR model
+      href: articles/example1.html
+    - text: Predator-prey model
+      href: articles/example2.html
+  - text: Reference
+    href: reference/index.html
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/r-and-gama/gamar
+
+
+

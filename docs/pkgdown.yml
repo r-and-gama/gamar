@@ -1,0 +1,14 @@
+pandoc: 2.3.1
+pkgdown: 1.3.0
+pkgdown_sha: ~
+articles:
+  example1: example1.html
+  example2: example2.html
+  example3: example3.html
+  example4: example4.html
+  gamar: gamar.html
+  gamar1: gamar1.html
+  gamar2: gamar2.html
+  gamar3: gamar3.html
+  gamar4: gamar4.html
+

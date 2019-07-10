@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simulation id="2" >
+	<Step id='0' >
+		<Variable name='S' type='INT'>999</Variable>
+		<Variable name='I' type='INT'>1</Variable>
+		<Variable name='R' type='INT'>0</Variable>
+	</Step>
+	<Step id='1' >
+		<Variable name='S' type='INT'>999</Variable>
+		<Variable name='I' type='INT'>0</Variable>
+		<Variable name='R' type='INT'>NA</Variable>
+	</Step>
+</Simulation>

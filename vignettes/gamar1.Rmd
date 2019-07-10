@@ -1,0 +1,21 @@
+---
+title: "1 Testing hypotheses"
+output: rmarkdown::html_vignette
+knit: (function(inputFile, encoding, output_dir) { 
+      rmarkdown::render(inputFile,
+                        encoding=encoding, 
+                        output_dir=paste0(dirname(normalizePath(getwd())), "/inst/doc"))})
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  cache = TRUE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
