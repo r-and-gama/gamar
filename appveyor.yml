@@ -14,11 +14,6 @@ cache:
   - C:\RLibrary
 
 # Adapt as necessary starting from here
-addons:
-  apt:
-    packages:
-    - libmagick++-dev
-
 environment:
   # env vars that may need to be set, at least temporarily, from time to time
   # see https://github.com/krlmlr/r-appveyor#readme for details
@@ -28,6 +23,11 @@ environment:
   R_VERSION: release
   R_BUILD_ARGS: --no-build-vignettes
   R_CHECK_ARGS: --no-examples --no-tests --no-vignettes --no-manual
+
+addons:
+  apt:
+    packages:
+    - libmagick++-dev
 
 build_script:
   - travis-tool.sh install_deps
