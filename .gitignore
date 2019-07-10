@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+building_package_and_website/making_logo_and_figures/*
+vignettes/*_cache/*
+workspace
+sir
+ignored/*
+

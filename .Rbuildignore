@@ -1,0 +1,12 @@
+^data-raw$
+^appveyor\.yml$
+^\.travis\.yml$
+^docs$
+^_pkgdown\.yml$
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^README-.*\.png$
+building_package_and_website
+tidyverse.R
+pkgdown
