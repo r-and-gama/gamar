@@ -273,11 +273,11 @@
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">df<span class="op">$</span>I0 &lt;-<span class="st"> </span><span class="dv">1000</span> <span class="op">-</span><span class="st"> </span>df<span class="op">$</span>S0</a></code></pre></div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">df</a>
 <a class="sourceLine" id="cb15-2" data-line-number="2"><span class="co">#&gt;    S0 R0 beta gamma S I tmax seed  I0</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; 1 700  0  1.5  0.15 1 1    2    5 300</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="co">#&gt; 2 800  0  1.5  0.15 1 1    2    4 200</span></a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co">#&gt; 3 900  0  1.5  0.15 1 1    2    3 100</span></a>
-<a class="sourceLine" id="cb15-6" data-line-number="6"><span class="co">#&gt; 4 950  0  1.5  0.15 1 1    2    1  50</span></a>
-<a class="sourceLine" id="cb15-7" data-line-number="7"><span class="co">#&gt; 5 999  0  1.5  0.15 1 1    2    2   1</span></a></code></pre></div>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; 1 700  0  1.5  0.15 1 1    2    1 300</span></a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="co">#&gt; 2 800  0  1.5  0.15 1 1    2    3 200</span></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co">#&gt; 3 900  0  1.5  0.15 1 1    2    5 100</span></a>
+<a class="sourceLine" id="cb15-6" data-line-number="6"><span class="co">#&gt; 4 950  0  1.5  0.15 1 1    2    2  50</span></a>
+<a class="sourceLine" id="cb15-7" data-line-number="7"><span class="co">#&gt; 5 999  0  1.5  0.15 1 1    2    4   1</span></a></code></pre></div>
 <p>Let’s now transform this data frame into an <code>experiment</code>:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">exp5 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/as_experiment.html">as_experiment</a></span>(<span class="dt">df =</span> df,</a>
 <a class="sourceLine" id="cb16-2" data-line-number="2">           <span class="dt">parameters =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"S0"</span>, <span class="st">"R0"</span>, <span class="st">"I0"</span>, <span class="st">"beta"</span>, <span class="st">"gamma"</span>),</a>
@@ -298,11 +298,11 @@
 <a class="sourceLine" id="cb17-6" data-line-number="6"><span class="co">#&gt; observed variables:  r_S, r_I </span></a>
 <a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt; Experiment overview:</span></a>
 <a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt;   p_S0 p_R0 p_I0 p_beta p_gamma r_S r_I tmax seed output</span></a>
-<a class="sourceLine" id="cb17-9" data-line-number="9"><span class="co">#&gt; 1  700    0  300    1.5    0.15   1   1    2    5     NA</span></a>
-<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co">#&gt; 2  800    0  200    1.5    0.15   1   1    2    4     NA</span></a>
-<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="co">#&gt; 3  900    0  100    1.5    0.15   1   1    2    3     NA</span></a>
-<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="co">#&gt; 4  950    0   50    1.5    0.15   1   1    2    1     NA</span></a>
-<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt; 5  999    0    1    1.5    0.15   1   1    2    2     NA</span></a></code></pre></div>
+<a class="sourceLine" id="cb17-9" data-line-number="9"><span class="co">#&gt; 1  700    0  300    1.5    0.15   1   1    2    1     NA</span></a>
+<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co">#&gt; 2  800    0  200    1.5    0.15   1   1    2    3     NA</span></a>
+<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="co">#&gt; 3  900    0  100    1.5    0.15   1   1    2    5     NA</span></a>
+<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="co">#&gt; 4  950    0   50    1.5    0.15   1   1    2    2     NA</span></a>
+<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt; 5  999    0    1    1.5    0.15   1   1    2    4     NA</span></a></code></pre></div>
 </div>
 </div>
 <div id="manipulating-experiments" class="section level2">
@@ -356,16 +356,16 @@
 <a class="sourceLine" id="cb23-6" data-line-number="6"><span class="co">#&gt; observed variables:  r_S, r_I, r_R </span></a>
 <a class="sourceLine" id="cb23-7" data-line-number="7"><span class="co">#&gt; Experiment overview:</span></a>
 <a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">#&gt;    p_S0 p_I0 p_R0 p_beta p_gamma r_S r_I r_R tmax seed output</span></a>
-<a class="sourceLine" id="cb23-9" data-line-number="9"><span class="co">#&gt; 1   999    1    0    1.5    0.15   1   1   1 1000    9     NA</span></a>
-<a class="sourceLine" id="cb23-10" data-line-number="10"><span class="co">#&gt; 2   999    1    0    1.5    0.15   1   1   1 1000    6     NA</span></a>
-<a class="sourceLine" id="cb23-11" data-line-number="11"><span class="co">#&gt; 3   999    1    0    1.5    0.15   1   1   1 1000    3     NA</span></a>
-<a class="sourceLine" id="cb23-12" data-line-number="12"><span class="co">#&gt; 4   999    1    0    1.5    0.15   1   1   1 1000    7     NA</span></a>
-<a class="sourceLine" id="cb23-13" data-line-number="13"><span class="co">#&gt; 5   999    1    0    1.5    0.15   1   1   1 1000    5     NA</span></a>
-<a class="sourceLine" id="cb23-14" data-line-number="14"><span class="co">#&gt; 6   999    1    0    1.5    0.15   1   1   1 1000    8     NA</span></a>
-<a class="sourceLine" id="cb23-15" data-line-number="15"><span class="co">#&gt; 7   999    1    0    1.5    0.15   1   1   1 1000    4     NA</span></a>
-<a class="sourceLine" id="cb23-16" data-line-number="16"><span class="co">#&gt; 8   999    1    0    1.5    0.15   1   1   1 1000    2     NA</span></a>
-<a class="sourceLine" id="cb23-17" data-line-number="17"><span class="co">#&gt; 9   999    1    0    1.5    0.15   1   1   1 1000   10     NA</span></a>
-<a class="sourceLine" id="cb23-18" data-line-number="18"><span class="co">#&gt; 10  999    1    0    1.5    0.15   1   1   1 1000    1     NA</span></a></code></pre></div>
+<a class="sourceLine" id="cb23-9" data-line-number="9"><span class="co">#&gt; 1   999    1    0    1.5    0.15   1   1   1 1000   10     NA</span></a>
+<a class="sourceLine" id="cb23-10" data-line-number="10"><span class="co">#&gt; 2   999    1    0    1.5    0.15   1   1   1 1000    5     NA</span></a>
+<a class="sourceLine" id="cb23-11" data-line-number="11"><span class="co">#&gt; 3   999    1    0    1.5    0.15   1   1   1 1000    6     NA</span></a>
+<a class="sourceLine" id="cb23-12" data-line-number="12"><span class="co">#&gt; 4   999    1    0    1.5    0.15   1   1   1 1000    4     NA</span></a>
+<a class="sourceLine" id="cb23-13" data-line-number="13"><span class="co">#&gt; 5   999    1    0    1.5    0.15   1   1   1 1000    8     NA</span></a>
+<a class="sourceLine" id="cb23-14" data-line-number="14"><span class="co">#&gt; 6   999    1    0    1.5    0.15   1   1   1 1000    9     NA</span></a>
+<a class="sourceLine" id="cb23-15" data-line-number="15"><span class="co">#&gt; 7   999    1    0    1.5    0.15   1   1   1 1000    2     NA</span></a>
+<a class="sourceLine" id="cb23-16" data-line-number="16"><span class="co">#&gt; 8   999    1    0    1.5    0.15   1   1   1 1000    1     NA</span></a>
+<a class="sourceLine" id="cb23-17" data-line-number="17"><span class="co">#&gt; 9   999    1    0    1.5    0.15   1   1   1 1000    7     NA</span></a>
+<a class="sourceLine" id="cb23-18" data-line-number="18"><span class="co">#&gt; 10  999    1    0    1.5    0.15   1   1   1 1000    3     NA</span></a></code></pre></div>
 </div>
 <div id="extracting-parameters-values" class="section level3">
 <h3 class="hasAnchor">
@@ -405,7 +405,7 @@
 </h3>
 <p>As seen above, <code>seed</code> can be extracted and changed with regular data frame methods:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">exp5<span class="op">$</span>seed</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="co">#&gt;  [1]  9  6  3  7  5  8  4  2 10  1</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="co">#&gt;  [1] 10  5  6  4  8  9  2  1  7  3</span></a>
 <a class="sourceLine" id="cb26-3" data-line-number="3">exp5<span class="op">$</span>seed &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/sample">sample</a></span>(<span class="dv">10</span>)</a>
 <a class="sourceLine" id="cb26-4" data-line-number="4">exp5</a>
 <a class="sourceLine" id="cb26-5" data-line-number="5"><span class="co">#&gt; Experiment with 10 simulations of 5 parameters and 3 observed variables</span></a>
@@ -415,16 +415,16 @@
 <a class="sourceLine" id="cb26-9" data-line-number="9"><span class="co">#&gt; observed variables:  r_S, r_I, r_R </span></a>
 <a class="sourceLine" id="cb26-10" data-line-number="10"><span class="co">#&gt; Experiment overview:</span></a>
 <a class="sourceLine" id="cb26-11" data-line-number="11"><span class="co">#&gt;    p_S0 p_I0 p_R0 p_beta p_gamma r_S r_I r_R tmax seed output</span></a>
-<a class="sourceLine" id="cb26-12" data-line-number="12"><span class="co">#&gt; 1   999    1    0    1.5    0.15   1   1   1 1000    6     NA</span></a>
-<a class="sourceLine" id="cb26-13" data-line-number="13"><span class="co">#&gt; 2   999    1    0    1.5    0.15   1   1   1 1000    4     NA</span></a>
-<a class="sourceLine" id="cb26-14" data-line-number="14"><span class="co">#&gt; 3   999    1    0    1.5    0.15   1   1   1 1000    5     NA</span></a>
-<a class="sourceLine" id="cb26-15" data-line-number="15"><span class="co">#&gt; 4   999    1    0    1.5    0.15   1   1   1 1000    2     NA</span></a>
-<a class="sourceLine" id="cb26-16" data-line-number="16"><span class="co">#&gt; 5   999    1    0    1.5    0.15   1   1   1 1000    7     NA</span></a>
-<a class="sourceLine" id="cb26-17" data-line-number="17"><span class="co">#&gt; 6   999    1    0    1.5    0.15   1   1   1 1000    3     NA</span></a>
-<a class="sourceLine" id="cb26-18" data-line-number="18"><span class="co">#&gt; 7   999    1    0    1.5    0.15   1   1   1 1000    8     NA</span></a>
-<a class="sourceLine" id="cb26-19" data-line-number="19"><span class="co">#&gt; 8   999    1    0    1.5    0.15   1   1   1 1000   10     NA</span></a>
-<a class="sourceLine" id="cb26-20" data-line-number="20"><span class="co">#&gt; 9   999    1    0    1.5    0.15   1   1   1 1000    9     NA</span></a>
-<a class="sourceLine" id="cb26-21" data-line-number="21"><span class="co">#&gt; 10  999    1    0    1.5    0.15   1   1   1 1000    1     NA</span></a></code></pre></div>
+<a class="sourceLine" id="cb26-12" data-line-number="12"><span class="co">#&gt; 1   999    1    0    1.5    0.15   1   1   1 1000    4     NA</span></a>
+<a class="sourceLine" id="cb26-13" data-line-number="13"><span class="co">#&gt; 2   999    1    0    1.5    0.15   1   1   1 1000    7     NA</span></a>
+<a class="sourceLine" id="cb26-14" data-line-number="14"><span class="co">#&gt; 3   999    1    0    1.5    0.15   1   1   1 1000   10     NA</span></a>
+<a class="sourceLine" id="cb26-15" data-line-number="15"><span class="co">#&gt; 4   999    1    0    1.5    0.15   1   1   1 1000    8     NA</span></a>
+<a class="sourceLine" id="cb26-16" data-line-number="16"><span class="co">#&gt; 5   999    1    0    1.5    0.15   1   1   1 1000    5     NA</span></a>
+<a class="sourceLine" id="cb26-17" data-line-number="17"><span class="co">#&gt; 6   999    1    0    1.5    0.15   1   1   1 1000    9     NA</span></a>
+<a class="sourceLine" id="cb26-18" data-line-number="18"><span class="co">#&gt; 7   999    1    0    1.5    0.15   1   1   1 1000    3     NA</span></a>
+<a class="sourceLine" id="cb26-19" data-line-number="19"><span class="co">#&gt; 8   999    1    0    1.5    0.15   1   1   1 1000    1     NA</span></a>
+<a class="sourceLine" id="cb26-20" data-line-number="20"><span class="co">#&gt; 9   999    1    0    1.5    0.15   1   1   1 1000    2     NA</span></a>
+<a class="sourceLine" id="cb26-21" data-line-number="21"><span class="co">#&gt; 10  999    1    0    1.5    0.15   1   1   1 1000    6     NA</span></a></code></pre></div>
 <p>Same for <code>tmax</code>:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">exp5<span class="op">$</span>tmax</a>
 <a class="sourceLine" id="cb27-2" data-line-number="2"><span class="co">#&gt;  [1] 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000</span></a>
@@ -437,16 +437,16 @@
 <a class="sourceLine" id="cb27-9" data-line-number="9"><span class="co">#&gt; observed variables:  r_S, r_I, r_R </span></a>
 <a class="sourceLine" id="cb27-10" data-line-number="10"><span class="co">#&gt; Experiment overview:</span></a>
 <a class="sourceLine" id="cb27-11" data-line-number="11"><span class="co">#&gt;    p_S0 p_I0 p_R0 p_beta p_gamma r_S r_I r_R tmax seed output</span></a>
-<a class="sourceLine" id="cb27-12" data-line-number="12"><span class="co">#&gt; 1   999    1    0    1.5    0.15   1   1   1    3    6     NA</span></a>
-<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="co">#&gt; 2   999    1    0    1.5    0.15   1   1   1    3    4     NA</span></a>
-<a class="sourceLine" id="cb27-14" data-line-number="14"><span class="co">#&gt; 3   999    1    0    1.5    0.15   1   1   1    3    5     NA</span></a>
-<a class="sourceLine" id="cb27-15" data-line-number="15"><span class="co">#&gt; 4   999    1    0    1.5    0.15   1   1   1    3    2     NA</span></a>
-<a class="sourceLine" id="cb27-16" data-line-number="16"><span class="co">#&gt; 5   999    1    0    1.5    0.15   1   1   1    3    7     NA</span></a>
-<a class="sourceLine" id="cb27-17" data-line-number="17"><span class="co">#&gt; 6   999    1    0    1.5    0.15   1   1   1    3    3     NA</span></a>
-<a class="sourceLine" id="cb27-18" data-line-number="18"><span class="co">#&gt; 7   999    1    0    1.5    0.15   1   1   1    3    8     NA</span></a>
-<a class="sourceLine" id="cb27-19" data-line-number="19"><span class="co">#&gt; 8   999    1    0    1.5    0.15   1   1   1    3   10     NA</span></a>
-<a class="sourceLine" id="cb27-20" data-line-number="20"><span class="co">#&gt; 9   999    1    0    1.5    0.15   1   1   1    3    9     NA</span></a>
-<a class="sourceLine" id="cb27-21" data-line-number="21"><span class="co">#&gt; 10  999    1    0    1.5    0.15   1   1   1    3    1     NA</span></a></code></pre></div>
+<a class="sourceLine" id="cb27-12" data-line-number="12"><span class="co">#&gt; 1   999    1    0    1.5    0.15   1   1   1    3    4     NA</span></a>
+<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="co">#&gt; 2   999    1    0    1.5    0.15   1   1   1    3    7     NA</span></a>
+<a class="sourceLine" id="cb27-14" data-line-number="14"><span class="co">#&gt; 3   999    1    0    1.5    0.15   1   1   1    3   10     NA</span></a>
+<a class="sourceLine" id="cb27-15" data-line-number="15"><span class="co">#&gt; 4   999    1    0    1.5    0.15   1   1   1    3    8     NA</span></a>
+<a class="sourceLine" id="cb27-16" data-line-number="16"><span class="co">#&gt; 5   999    1    0    1.5    0.15   1   1   1    3    5     NA</span></a>
+<a class="sourceLine" id="cb27-17" data-line-number="17"><span class="co">#&gt; 6   999    1    0    1.5    0.15   1   1   1    3    9     NA</span></a>
+<a class="sourceLine" id="cb27-18" data-line-number="18"><span class="co">#&gt; 7   999    1    0    1.5    0.15   1   1   1    3    3     NA</span></a>
+<a class="sourceLine" id="cb27-19" data-line-number="19"><span class="co">#&gt; 8   999    1    0    1.5    0.15   1   1   1    3    1     NA</span></a>
+<a class="sourceLine" id="cb27-20" data-line-number="20"><span class="co">#&gt; 9   999    1    0    1.5    0.15   1   1   1    3    2     NA</span></a>
+<a class="sourceLine" id="cb27-21" data-line-number="21"><span class="co">#&gt; 10  999    1    0    1.5    0.15   1   1   1    3    6     NA</span></a></code></pre></div>
 <p>If you want to stop observing the variable R and observe the variable I every 2 steps, you’d do:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">exp5<span class="op">$</span>r_R &lt;-<span class="st"> </span><span class="ot">NULL</span></a>
 <a class="sourceLine" id="cb28-2" data-line-number="2">exp5<span class="op">$</span>r_I &lt;-<span class="st"> </span><span class="dv">2</span></a></code></pre></div>
@@ -459,16 +459,16 @@
 <a class="sourceLine" id="cb29-6" data-line-number="6"><span class="co">#&gt; observed variables:  r_S, r_I </span></a>
 <a class="sourceLine" id="cb29-7" data-line-number="7"><span class="co">#&gt; Experiment overview:</span></a>
 <a class="sourceLine" id="cb29-8" data-line-number="8"><span class="co">#&gt;    p_S0 p_I0 p_R0 p_beta p_gamma r_S r_I tmax seed output</span></a>
-<a class="sourceLine" id="cb29-9" data-line-number="9"><span class="co">#&gt; 1   999    1    0    1.5    0.15   1   2    3    6     NA</span></a>
-<a class="sourceLine" id="cb29-10" data-line-number="10"><span class="co">#&gt; 2   999    1    0    1.5    0.15   1   2    3    4     NA</span></a>
-<a class="sourceLine" id="cb29-11" data-line-number="11"><span class="co">#&gt; 3   999    1    0    1.5    0.15   1   2    3    5     NA</span></a>
-<a class="sourceLine" id="cb29-12" data-line-number="12"><span class="co">#&gt; 4   999    1    0    1.5    0.15   1   2    3    2     NA</span></a>
-<a class="sourceLine" id="cb29-13" data-line-number="13"><span class="co">#&gt; 5   999    1    0    1.5    0.15   1   2    3    7     NA</span></a>
-<a class="sourceLine" id="cb29-14" data-line-number="14"><span class="co">#&gt; 6   999    1    0    1.5    0.15   1   2    3    3     NA</span></a>
-<a class="sourceLine" id="cb29-15" data-line-number="15"><span class="co">#&gt; 7   999    1    0    1.5    0.15   1   2    3    8     NA</span></a>
-<a class="sourceLine" id="cb29-16" data-line-number="16"><span class="co">#&gt; 8   999    1    0    1.5    0.15   1   2    3   10     NA</span></a>
-<a class="sourceLine" id="cb29-17" data-line-number="17"><span class="co">#&gt; 9   999    1    0    1.5    0.15   1   2    3    9     NA</span></a>
-<a class="sourceLine" id="cb29-18" data-line-number="18"><span class="co">#&gt; 10  999    1    0    1.5    0.15   1   2    3    1     NA</span></a></code></pre></div>
+<a class="sourceLine" id="cb29-9" data-line-number="9"><span class="co">#&gt; 1   999    1    0    1.5    0.15   1   2    3    4     NA</span></a>
+<a class="sourceLine" id="cb29-10" data-line-number="10"><span class="co">#&gt; 2   999    1    0    1.5    0.15   1   2    3    7     NA</span></a>
+<a class="sourceLine" id="cb29-11" data-line-number="11"><span class="co">#&gt; 3   999    1    0    1.5    0.15   1   2    3   10     NA</span></a>
+<a class="sourceLine" id="cb29-12" data-line-number="12"><span class="co">#&gt; 4   999    1    0    1.5    0.15   1   2    3    8     NA</span></a>
+<a class="sourceLine" id="cb29-13" data-line-number="13"><span class="co">#&gt; 5   999    1    0    1.5    0.15   1   2    3    5     NA</span></a>
+<a class="sourceLine" id="cb29-14" data-line-number="14"><span class="co">#&gt; 6   999    1    0    1.5    0.15   1   2    3    9     NA</span></a>
+<a class="sourceLine" id="cb29-15" data-line-number="15"><span class="co">#&gt; 7   999    1    0    1.5    0.15   1   2    3    3     NA</span></a>
+<a class="sourceLine" id="cb29-16" data-line-number="16"><span class="co">#&gt; 8   999    1    0    1.5    0.15   1   2    3    1     NA</span></a>
+<a class="sourceLine" id="cb29-17" data-line-number="17"><span class="co">#&gt; 9   999    1    0    1.5    0.15   1   2    3    2     NA</span></a>
+<a class="sourceLine" id="cb29-18" data-line-number="18"><span class="co">#&gt; 10  999    1    0    1.5    0.15   1   2    3    6     NA</span></a></code></pre></div>
 </div>
 </div>
 <div id="running-experiments" class="section level2">
