@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `gamar` <img src="logo.png" align="right" width=200/>
+# `gamar` <img src="docs/logo.png" align="right" width=200/>
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/gamar)](https://cran.r-project.org/package=gamar)
