@@ -40,7 +40,7 @@ realexp <- function(output, exp) {
 #' @noRd
 retrieve_results <- function(outfile, exp, display) {
   # Extract a data frame
-  tmp <- XML::xmlToDataFrame(XML::xmlParse(outfile), stringsAsFactors = F)
+  tmp <- XML::xmlToDataFrame(XML::xmlParse(outfile), stringsAsFactors = FALSE)
   # Extract names of the variable
   lst_name <- unlist(XML::xmlToList(XML::xmlParse(outfile)))
   lst_name <- lst_name[which(grepl("name", names(lst_name)))]

@@ -172,9 +172,7 @@ print.experiment <- function(x, interspace = 3, n = 6, digits = 4,
 #'
 #' @rdname experiment
 #' @export
-`[.experiment` <- function(exp, i, j, ..., drop = TRUE)
-  {
+`[.experiment` <- function(exp, i, j, ..., drop = TRUE) {
   exp <- as.data.frame(exp)
   exp[i, j, ..., drop = drop]
 }
-

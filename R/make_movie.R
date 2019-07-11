@@ -52,7 +52,7 @@ make_movie <- function(exp, name_col, output_path = NULL, autoplay = TRUE,
      ifelse(file.exists(gif_files[x]), gif_files[x],
             ifelse(is.na(gif_files[x]), NA, paste0(snap_dir, gif_files[x]))))
    output <-
-     paste0(movie_dir, "animation_", attr(exp, "dic_r2g")[name_col], i,".gif")
+     paste0(movie_dir, "animation_", attr(exp, "dic_r2g")[name_col], i, ".gif")
    animation::ani.options(interval = interval, loop = loop,
                           autobrowse = autobrowse, autoplay = autoplay,
                           nmax = length(gif_files), ...)

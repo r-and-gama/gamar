@@ -20,7 +20,8 @@ set_environment_variables <- function() {
           gamar.gama.path                     = "UNKNOWN",
           gamar.startjar                      = "UNKNOWN",
           gamar.plugins                       = "UNKNOWN",
-          gamar.log                           = paste0(getwd(), "/workspace/.metadata/.log"))
+          gamar.log                           = paste0(getwd(),
+                                                       "/workspace/.metadata/.log"))
 }
 
 # ------------------------------------------------------------------------------
@@ -51,7 +52,8 @@ init_gama_jar <- function(path) {
   gamapath <- init_gama_path(path)
   if (is.na(gamapath))
     return(NA)
-  plugins <- grep("org.eclipse.equinox.launcher_.*", dir(gamapath), value = T)
+  plugins <- grep("org.eclipse.equinox.launcher_.*", dir(gamapath),
+                  value = TRUE)
   res <- paste0(gamapath, "/", plugins)
   ifelse(file.exists(res), res, NA)
 }
