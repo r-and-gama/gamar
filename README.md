@@ -94,6 +94,9 @@ with accessor functions.
 
 ## Installation and configuration
 
+**The package is still on development for Windows, it will be available
+soon.**
+
 You can install `gamar` from GitHub with:
 
 ``` r
