@@ -6,7 +6,7 @@ knit: (function(inputFile, encoding, output_dir) {
                         encoding=encoding, 
                         output_dir=paste0(dirname(normalizePath(getwd())), "/inst/doc"))})
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Example: SIR model}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
