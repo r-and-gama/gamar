@@ -1,6 +1,7 @@
 # First situation: the sets of names of the data frame and the experiment
 # are exactly the same:
-if (exists("sir1", inherits = FALSE)) rm(sir1)
+sir1 <- load_experiment("sir",
+                        system.file("models", "sir.gaml", package = "gamar"))
 exp <- sir1
 df <- as.data.frame(repl(sir1, 3))
 map_experiment(df, exp)

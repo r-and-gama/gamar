@@ -1,5 +1,6 @@
 # A first example:
-if (exists("sir1", inherits = FALSE)) rm(sir1)
+sir1 <- load_experiment("sir",
+                        system.file("models", "sir.gaml", package = "gamar"))
 df <- as.data.frame(repl(sir1, 5))
 exp_name <- name(sir1)
 gaml_file <- attr(sir1, "model")$path
@@ -14,3 +15,4 @@ as_experiment(df, 1:5, c("r_S", "r_I", "r_R"), "tmax", "seed", exp_name,
 # And even using default parameters specification:
 as_experiment(df, obsrates = c("r_S", "r_I", "r_R"),
               experiment = exp_name, model = gaml_file)
+
