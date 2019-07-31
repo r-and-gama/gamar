@@ -25,8 +25,6 @@ list_experiments <- function(file){
     if (grepl("type:", exp)) {
       experiment <- trimws(substr(exp, 1, regexpr("type:", exp) - 1))
       type <- trimws(substr(exp, regexpr("type:", exp) + 5, nchar(exp)))
-      if (grepl("\\s+", type))
-        type <- trimws(substr(type, 1, regexpr("\\s+", type)))
       cbind(experiment, type)
     } else {
       cbind("experiment" = exp, "type" = "gui")
