@@ -84,7 +84,7 @@ defpath <- function(path, Xmx = "2048m", Xms = "512m") {
   defaultjar <- init_gama_jar(path)
   version <- gama_version(path)
   if (is.na(defaultjar)) {
-    stop("Gama configuration failed!")
+    stop("Gama configuration failed!") # nocov
   }
   else {
     options(gamar.startjar = defaultjar,
