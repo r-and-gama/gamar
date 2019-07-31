@@ -37,8 +37,8 @@ read_gaml_experiment <- function(exp, model) {
                    shQuote(stderrFile)))
 
   if (file.exists(getOption("gamar.log")))
-    file.copy(from = getOption("gamar.log"),
-              to = logFile)
+    file.copy(from = getOption("gamar.log"), # nocov
+              to = logFile) # nocov
   run$stdout <-  readLines(stdoutFile)
   run$stderr <-  readLines(stderrFile)
 
