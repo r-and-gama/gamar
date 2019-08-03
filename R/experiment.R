@@ -199,7 +199,6 @@ validate_experiment <- function(x) {
   dic_g2r <- attr(x, "dic_g2r")
   dic_r2g <- attr(x, "dic_r2g")
   colnames <- lapply(c(parameters, obs_rates), function(f) names(f(x)))
-
   check_experiment(name(x), model)
 
   # check types forced by experiment
