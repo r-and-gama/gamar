@@ -36,46 +36,77 @@ new_experiment <- function(parameters, obsrates, tmax, seed,
     stopifnot(all(is.character(dic_g2r),
                   is.character(names(dic_g2r))))
   }
-  if (!is.na(output)) {
-    if (nrow(parameters) > 1) {
-      stopifnot(all(is.list(output),
-                  length(output) > 1,
-                  sapply(output, is.data.frame)))
-    } else {
-      stopifnot(is.data.frame(output))
-    }
+
+  if(all(is.null(parameters), is.null(obsrates))) {
+    output <- NA
   }
+  if (!is.na(output) &
+        (all(!is.null(parameters), nrow(parameters) >= 1) ||
+        all(!is.null(obsrates), nrow(obsrates) >= 1))) {
+      stopifnot(all(is.list(output),
+                  length(output) >= 1,
+                  sapply(output, is.data.frame)))
+    }
 
   stopifnot(all(is.character(model), length(model) == 1) ||
               all(is.list(model), length(model) == 3))
 
   stopifnot(!is.na(as.numeric(tmax)))
   stopifnot(!is.na(as.numeric(seed)))
+
   # Generating new names:
+  oldnames <- NULL
   names_param <- names(parameters)
   names_obsrates <- names(obsrates)
-  oldnames <- c(names_param, names_obsrates)
-  param_newname <- paste0("p_", names_param)
-  obsrates_newname <- paste0("r_", names_obsrates)
-  newnames <- c(param_newname, obsrates_newname)
+  if (all(!is.null(parameters), !is.null(obsrates))) {
+    oldnames <- c(names_param, names_obsrates)
+    param_newname <- paste0("p_", names_param)
+    obsrates_newname <- paste0("r_", names_obsrates)
+    newnames <- c(param_newname, obsrates_newname)
+  } else if (!is.null(parameters)) {
+    oldnames <- names_param
+    param_newname <- paste0("p_", names_param)
+    newnames <- param_newname
+  } else if (!is.null(obsrates)) {
+    oldnames <- names_obsrates
+    obsrates_newname <- paste0("r_", names_obsrates)
+    newnames <- obsrates_newname
+  }
 
   # Dealing with dictionaries:
   if (is.null(dic_g2r)) {
-    dic_g2r <- setNames(newnames, oldnames)
-    dic_r2g <- setNames(names(dic_g2r), dic_g2r)
-
-  } else {
+    if (!is.null(oldnames)) {
+      dic_g2r <- setNames(newnames, oldnames)
+      dic_r2g <- setNames(names(dic_g2r), dic_g2r)
+    } else {
+      dic_g2r <- NULL
+      dic_r2g <- NULL
+   }
+ } else {
+  if (!is.null(oldnames)) {
     stopifnot(all(dic_g2r %in% oldnames))
     sel1 <- which(dic_g2r %in% names_param)
     sel2 <- which(dic_g2r %in% names_obsrates)
-    dic_g2r <- c(setNames(paste0("p_", dic_g2r[sel1]), names(dic_g2r[sel1])),
-                 setNames(paste0("r_", dic_g2r[sel2]), names(dic_g2r[sel2])))
-    dic_r2g <- setNames(names(dic_g2r), dic_g2r)
+#    if (all(!is.null(parameters), !is.null(obsrates))) {
+        dic_g2r <- c(setNames(paste0("p_", dic_g2r[sel1]), names(dic_g2r[sel1])),
+               setNames(paste0("r_", dic_g2r[sel2]), names(dic_g2r[sel2])))
+        dic_r2g <- setNames(names(dic_g2r), dic_g2r)
+#    } else if (!is.null(parameters)) {
+#        dic_g2r <- setNames(paste0("p_", dic_g2r[sel1]), names(dic_g2r[sel1]))
+#        dic_r2g <- setNames(names(dic_g2r), dic_g2r)
+#    } else if (!is.null(obsrates)) {
+#        dic_g2r <-  setNames(paste0("r_", dic_g2r[sel2]), names(dic_g2r[sel2]))
+#        dic_r2g <- setNames(names(dic_g2r), dic_g2r)
+#    }
+#  } else {
+#     dic_g2r <- NULL
+#      dic_r2g <- NULL
   }
+ }
 
   # Dealing with obsrates, seed and tmax, converting them into integers if
   # needed:
-  if (!all(sapply(obsrates, is.integer))) {
+  if (!all(sapply(obsrates, is.integer)) & !is.null(obsrates)) {
     message(cat(
       "Periods of observation (\"obsrates\") are converted into integers."))
     obsrates[] <- lapply(obsrates, function(x) as.integer(x))
@@ -105,7 +136,7 @@ new_experiment <- function(parameters, obsrates, tmax, seed,
                        "md5sum" = md5sum(model))
 
   # cast parameter types
-  if (!is.null(model_info$info$Parameters)){
+  if (all(!is.null(model_info$info$Parameters) & !is.null(parameters))){
     types_param <- model_info$info$Parameters[
       lapply(model_info$info$Parameters, "[[", "name") %in%
         c(dic_r2g[param_newname])]
@@ -123,7 +154,7 @@ new_experiment <- function(parameters, obsrates, tmax, seed,
   }
 
   # construct output
-  if (all(ncol(parameters) == 0, ncol(obsrates) != 0)) {
+  if (all(is.null(parameters), !is.null(obsrates))) {
     out <- setNames(cbind(obsrates,
                           tmax = tmax,
                           seed = seed,
@@ -131,7 +162,7 @@ new_experiment <- function(parameters, obsrates, tmax, seed,
                     c(grep("r_", newnames, value = TRUE),
                       "tmax", "seed", "output"))
   }
-  if (all(ncol(parameters) != 0, ncol(obsrates) == 0)) {
+  if (all(!is.null(parameters), is.null(obsrates))) {
     out <- setNames(cbind(parameters,
                           tmax = tmax,
                           seed = seed,
@@ -139,12 +170,12 @@ new_experiment <- function(parameters, obsrates, tmax, seed,
                     c(grep("p_", newnames, value = TRUE),
                       "tmax", "seed", "output"))
   }
-  if (all(ncol(parameters) == 0, ncol(obsrates) == 0)) {
+  if (all(is.null(parameters), is.null(obsrates))) {
     out <- data.frame(tmax = tmax,
                           seed = seed,
                           output = output)
   }
-  if (all(ncol(parameters) != 0, ncol(obsrates) != 0)) {
+  if (all(!is.null(parameters), !is.null(obsrates))) {
     out <- setNames(cbind(parameters,
                           obsrates,
                           tmax = tmax,
@@ -192,14 +223,13 @@ validate_experiment <- function(x) {
     diff <- setdiff(dic_r2g[colnames[[1]]],
                     sapply(model$info$Parameters,
                            function(x) x[["name"]]))
-    if (length(diff) > 0)
-      stop(paste0("The parameters names '", substitute(diff),
-                  "' do not correspond to any parameter in the '",
+    if (length(diff) > 0) {
+      stop(paste0("The parameter name '", substitute(diff),
+                  "' does not correspond to any parameter in the '",
                   basename(model$path), "' file."))
-
+    }
     # check parameter type consistency between experiment and gaml
     # (selection of the parametes in gaml file by name)
-
     type_r <- sapply(parameters(x), class)
     names_type_g <- unlist(lapply(model$info$Parameters, "[[", "name"))
     names_type_g <- dic_g2r[names_type_g]
