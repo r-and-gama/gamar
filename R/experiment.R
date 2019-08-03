@@ -195,15 +195,10 @@ validate_experiment <- function(x) {
     diff <- setdiff(dic_r2g[colnames[[1]]],
                     sapply(model$info$Parameters,
                            function(x) x[["name"]]))
-    if (length(diff) > 1) {
+    if (length(diff) > 0) {
       stop(paste0("The parameters names '", substitute(diff),
                   "' do not correspond to any parameter in the '",
                   basename(model$path), "' file."))
-    } else if (length(diff) > 0) {
-      stop(paste0("The parameter name '", substitute(diff),
-                  "' does not correspond to any parameter in the '",
-                  basename(model$path), "' file."))
-    }
 
     # check parameter type consistency between experiment and gaml
     # (selection of the parametes in gaml file by name)
