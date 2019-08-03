@@ -195,7 +195,7 @@ validate_experiment <- function(x) {
     diff <- setdiff(dic_r2g[colnames[[1]]],
                     sapply(model$info$Parameters,
                            function(x) x[["name"]]))
-    if (length(diff) > 0) {
+    if (length(diff) > 0)
       stop(paste0("The parameters names '", substitute(diff),
                   "' do not correspond to any parameter in the '",
                   basename(model$path), "' file."))
