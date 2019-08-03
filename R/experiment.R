@@ -218,11 +218,7 @@ validate_experiment <- function(x) {
   if (!is.null(model$info$Outputs)){
     diff <- setdiff(dic_r2g[colnames[[2]]],
                     unlist(lapply(model$info$Outputs, function(x) x[["name"]])))
-    if (length(diff) > 1) {
-      stop(paste0("The variables names '", substitute(diff),
-                  "' do not correspond to any variable in the '",
-                  basename(model), "' file."))
-    } else if (length(diff) > 0) {
+    if (length(diff) > 0) {
       stop(paste0("The variable name '", substitute(diff),
                   "' does not correspond to any variable in the '",
                   basename(model$path), "' file."))
