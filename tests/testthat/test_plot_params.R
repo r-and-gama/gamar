@@ -46,8 +46,8 @@ df2 <-   data.frame(S0 = c(900, 300, 500),
 exp2 <- as_experiment(df2, parameters = c("S0", "I0", "R0", "beta", "gamma"),
                       obsrates  = c("S", "I", "R"),
                       tmax = "nbiter", seed = "seed", experiment = "sir",
-                      model =
-                        system.file("models", "sir.gaml", package = "gamar"))
+                      model = system.file("models",
+                                          "sir.gaml", package = "gamar"))
 
 
 test_that("Test valid exp to plot", {
