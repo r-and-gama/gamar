@@ -58,7 +58,8 @@ read_gaml_experiment <- function(exp, model) {
 
 # test special characters ------------------------------------------------------
 test_schar <- function(x) {
-  if (any(grepl("[\\']", x))) {
+  schar <- c("\\'", "\\]", "\\[", "\\&", "<", ">", ",")
+  if (any(grepl(paste(schar, collapse = "|"), x))) {
     stop(paste0("The gamar package does not support the specials characters `<`",
                 ", `>`, `&` and `'` in parameters,",
                 " outputs and experiments names."))
