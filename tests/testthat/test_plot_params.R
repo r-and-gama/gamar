@@ -53,9 +53,7 @@ exp2 <- as_experiment(df2, parameters = c("S0", "I0", "R0", "beta", "gamma"),
 test_that("Test valid exp to plot", {
   expect_error(plot_params(exp))
   expect_error(plot_params(repl(exp, 3)))
-  exp[,] <- NULL
-  expect_error(plot_params(exp))
-
+  expect_error(plot_params(exp[-1,]))
 })
 
 test_that("Test n = 1", {
