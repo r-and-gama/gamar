@@ -214,10 +214,10 @@ validate_experiment <- function(x) {
   # check parameter consistency between experiment and gaml
 
   if (length(setdiff(unlist(colnames), dic_g2r)) > 0)
-    stop("Some variables or parameters names are not in the dictionary.")
+    stop("Some variables or parameters names are not in the dictionary.") # nocov
 
   if (setequal(dic_g2r, names(dic_r2g)) + setequal(names(dic_g2r), dic_r2g) < 2)
-    stop("The dictionaries are inconsistent.")
+    stop("The dictionaries are inconsistent.") # nocov
   if (!is.null(model$info$Parameters)) {
     diff <- setdiff(dic_r2g[colnames[[1]]],
                     sapply(model$info$Parameters,

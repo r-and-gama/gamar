@@ -90,23 +90,23 @@ make_dictionary <- function(x) {
 
 # Defines the GAMA repository --------------------------------------------------
 gama_repo <- function(repo = NULL) {
-  if (! is.null(repo)) options(gamar.repo = repo)
+  if (! is.null(repo)) options(gamar.repo = repo) # nocov
 }
 
 # Test if operating system is Windows ------------------------------------------
 isWindows <- function() {
-  return (Sys.info()["sysname"] == "Windows")
+  return (Sys.info()["sysname"] == "Windows") # nocov
 }
 
 # Returns the OS ---------------------------------------------------------------
 get_os <- function(){
   os <- paste0(Sys.info()["sysname"])
-  if (is.null(os)){
+  if (is.null(os)){ # nocov start
     if (grepl("^darwin", R.version$os))
       os <- ""
     if (grepl("linux-gnu", R.version$os))
       os <- "Linux"
-  }
+  } # nocov end
   os
 }
 
@@ -114,19 +114,19 @@ get_os <- function(){
 #' In function of remote distribution of the OS returns the path
 #' @noRd
 gama_remote_distrib <- function() {
-  switch(get_os(),
+  switch(get_os(), # nocov start
          "Darwin"  = paste0(options("gamar.repo"),
                             options("gamar.default.gama.osx")),
          "Windows" = paste0(options("gamar.repo"),
                             options("gamar.default.gama.win64")),
          "Linux"   =  paste0(options("gamar.repo"),
-                             options("gamar.default.gama.linux")))
+                             options("gamar.default.gama.linux"))) # nocov end
 }
 
 # Downloads gama ---------------------------------------------------------------
 #' @importFrom utils download.file unzip untar
 #' @importFrom downloader download
-download_gama <- function() {
+download_gama <- function() { # nocov start
   distrib <- gama_remote_distrib()
   expDir  <- gama_local_distrib_path()
   path <- paste0(options("gamar.temp_dir"), "/")
@@ -150,10 +150,10 @@ download_gama <- function() {
                      "Windows" = options("gamar.default.gama.win.appdir"),
                      "linux" = options("gamar.default.gama.linux.appdir"))
   expDir
-}
+} # nocov end
 
 # Setup GAMA UI ----------------------------------------------------------------
-setup_gama_ui <- function() {
+setup_gama_ui <- function() { # nocov start
   defaultjar <- ""
   repeat{
     message(cat("Give the path of Gama platform or [Q]uit:"))
@@ -167,7 +167,7 @@ setup_gama_ui <- function() {
     }
   }
   answer
-}
+} # nocov end
 
 # download GAMA when necessary -------------------------------------------------
 #' Download GAMA and configure
@@ -187,7 +187,7 @@ setup_gama_ui <- function() {
 #' }
 #'
 #' @export
-setup_gama <- function(path = NA) {
+setup_gama <- function(path = NA) { # nocov start
   if (!is.na(path)) {
     defpath(path)
     return(NA)
@@ -213,4 +213,4 @@ setup_gama <- function(path = NA) {
        if (is.na(gama_path)) return(NA)
        defpath(gama_path)
   }
-}
+} # nocov end

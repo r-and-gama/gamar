@@ -36,7 +36,8 @@ plot_params <- function(exp) {
   topidx <- if (length(worthidx) != 0) {
     worthidx[1:min(3, length(worthidx))]
     } else {
-      0
+      # doubt: already in case length(allvar) == 0
+      0 # nocov
     }
   n <- length(topidx)
 
