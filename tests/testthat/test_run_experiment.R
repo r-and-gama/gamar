@@ -37,4 +37,15 @@ testthat::test_that(
     test2 <- run_experiment(exp1, hpc = 2, save = TRUE)
     testthat::expect_equal(dim(test1$output[[1]]), c(2, 6))
 
+    # check no obsrates
+    exp <- load_experiment("sir",
+                           model = "test_files/sir_no_obsrates.gaml")
+    testthat::expect_s3_class(run_experiment(exp), "experiment")
+
+    # check no parameters
+    exp <- load_experiment("sir",
+                           model = "test_files/sir_no_parameters.gaml")
+    testthat::expect_s3_class(run_experiment(exp), "experiment")
+
+
   })
