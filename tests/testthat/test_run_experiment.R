@@ -21,14 +21,14 @@ testthat::test_that(
                           obsrates  = c("S", "I", "R"),
                           tmax = "nbiter", seed = "seed", experiment = "sir",
                           model =
-                            system.file("models", "sir.gaml", package = "rama"))
+                            system.file("models", "sir.gaml", package = "gamar"))
     otp <- run_experiment(exp0)
     testthat::expect_equal(otp$r_I, 2)
 
     # check display
     exp1 <- load_experiment("prey_predator",
                             system.file("models/predator_prey/models",
-                                        "predator_prey.gaml", package = "rama"))
+                                        "predator_prey.gaml", package = "gamar"))
 
     exp1$tmax <- 2L
     test1 <- run_experiment(exp1, hpc = 2, display = TRUE)
