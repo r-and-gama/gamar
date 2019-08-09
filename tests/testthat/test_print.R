@@ -17,7 +17,7 @@ testthat::test_that(
                         obsrates  = c("I", "S", "R"),
                         tmax = "nbiter", seed = "seed", experiment = "sir",
                         model =
-                          system.file("models", "sir.gaml", package = "rama"))
+                          system.file("models", "sir.gaml", package = "gamar"))
 
   exp1 <- exp0
   exp1[,] <- NULL
@@ -30,7 +30,7 @@ testthat::test_that(
                         obsrates  = c("I", "S"),
                         tmax = "nbiter", seed = "seed", experiment = "sir",
                         model =
-                          system.file("models", "sir.gaml", package = "rama"))
+                          system.file("models", "sir.gaml", package = "gamar"))
 
   testthat::expect_length(capture.output(exp3), 8)
   testthat::expect_length(capture.output(exp0), 8)
