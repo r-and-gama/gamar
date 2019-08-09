@@ -123,6 +123,8 @@ run_experiment <- function(exp, hpc = 1, save = FALSE, path = NULL,
 
   if (ncol(obs_rates(exp)) == 0)
     return(exp)
+  if (ncol(parameters(exp)) == 0)
+    return(exp)
 
   if (isTRUE(display) & !isTRUE(save)) {
     save <- TRUE

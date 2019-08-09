@@ -24,9 +24,14 @@ new_experiment <- function(parameters, obsrates, tmax, seed,
 
   if (!is.null(parameters)) {
     stopifnot(all(is.data.frame(parameters)))
+    if (nrow(parameters) == 0) # when loading gaml file
+                            # without parameters or as_experiment without parameters
+      parameters <- NULL
   }
   if (!is.null(obsrates)) {
     stopifnot(all(is.data.frame(obsrates)))
+    if (nrow(obsrates) == 0)
+      obsrates <- NULL
   }
   if (!is.null(experiment)) {
     stopifnot(all(is.character(experiment),
