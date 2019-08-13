@@ -4,7 +4,7 @@
 # `gamar` <img src="docs/logo.png" align="right" width=200/>
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/gamar)](https://cran.r-project.org/package=gamar)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/gamar)](https://cran.r-project.org/package=gamar)
 [![Travis build
 status](https://travis-ci.org/r-and-gama/gamar.svg?branch=master)](https://travis-ci.org/r-and-gama/gamar)
 [![AppVeyor build
