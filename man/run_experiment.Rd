@@ -4,8 +4,14 @@
 \alias{run_experiment}
 \title{Run an experiment}
 \usage{
-run_experiment(exp, hpc = 1, save = FALSE, path = NULL,
-  display = FALSE, append = TRUE)
+run_experiment(
+  exp,
+  hpc = 1,
+  save = FALSE,
+  path = NULL,
+  display = FALSE,
+  append = TRUE
+)
 }
 \arguments{
 \item{exp}{an object of class experiment.}
