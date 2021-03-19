@@ -46,7 +46,7 @@ Imports:
     plot3D,
     downloader
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     magick,
