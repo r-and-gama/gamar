@@ -8,8 +8,7 @@
 \usage{
 \method{[}{experiment}(exp, i, j, ..., drop = TRUE)
 
-experiment(parameters, obsrates, tmax, seed, experiment, model,
-  dic = NULL)
+experiment(parameters, obsrates, tmax, seed, experiment, model, dic = NULL)
 
 is.experiment(exp)
 }
