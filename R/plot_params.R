@@ -41,11 +41,7 @@ plot_params <- function(exp) {
     }
   n <- length(topidx)
 
-  # check n the number of parameters to be plotted
   exp <- as.data.frame(exp)
-  # n can't be 0 once length(allvar) !=0
-#  if (n == 0)
-#    stop("There is no parameter to plot in this experiment")
   if (n == 1)
     stripchart(exp[, topidx[1]], xlab = colnames(exp)[topidx[1]])
   if (n == 2)

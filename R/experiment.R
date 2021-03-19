@@ -92,20 +92,9 @@ new_experiment <- function(parameters, obsrates, tmax, seed,
     stopifnot(all(dic_g2r %in% oldnames))
     sel1 <- which(dic_g2r %in% names_param)
     sel2 <- which(dic_g2r %in% names_obsrates)
-#    if (all(!is.null(parameters), !is.null(obsrates))) {
         dic_g2r <- c(setNames(paste0("p_", dic_g2r[sel1]), names(dic_g2r[sel1])),
                setNames(paste0("r_", dic_g2r[sel2]), names(dic_g2r[sel2])))
         dic_r2g <- setNames(names(dic_g2r), dic_g2r)
-#    } else if (!is.null(parameters)) {
-#        dic_g2r <- setNames(paste0("p_", dic_g2r[sel1]), names(dic_g2r[sel1]))
-#        dic_r2g <- setNames(names(dic_g2r), dic_g2r)
-#    } else if (!is.null(obsrates)) {
-#        dic_g2r <-  setNames(paste0("r_", dic_g2r[sel2]), names(dic_g2r[sel2]))
-#        dic_r2g <- setNames(names(dic_g2r), dic_g2r)
-#    }
-#  } else {
-#     dic_g2r <- NULL
-#      dic_r2g <- NULL
   }
  }
 
