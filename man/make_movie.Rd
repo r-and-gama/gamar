@@ -4,8 +4,16 @@
 \alias{make_movie}
 \title{Create GIF animations}
 \usage{
-make_movie(exp, name_col, output_path = NULL, autoplay = TRUE,
-  interval = 0.01, loop = TRUE, autobrowse = FALSE, ...)
+make_movie(
+  exp,
+  name_col,
+  output_path = NULL,
+  autoplay = TRUE,
+  interval = 0.01,
+  loop = TRUE,
+  autobrowse = FALSE,
+  ...
+)
 }
 \arguments{
 \item{exp}{an object of class experiment.}

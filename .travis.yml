@@ -11,3 +11,5 @@ addons:
   apt:
     packages:
     - libmagick++-dev
+services:
+  - xvfb

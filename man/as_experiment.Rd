@@ -4,8 +4,16 @@
 \alias{as_experiment}
 \title{Converting a data frame into an experiment}
 \usage{
-as_experiment(df, parameters = NULL, obsrates = NULL, tmax = "tmax",
-  seed = "seed", experiment, model, dic = NULL)
+as_experiment(
+  df,
+  parameters = NULL,
+  obsrates = NULL,
+  tmax = "tmax",
+  seed = "seed",
+  experiment,
+  model,
+  dic = NULL
+)
 }
 \arguments{
 \item{df}{A data frame containing values of paramters, periods of observation,

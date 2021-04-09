@@ -84,7 +84,7 @@ defpath <- function(path, Xmx = "2048m", Xms = "512m") {
   defaultjar <- init_gama_jar(path)
   version <- gama_version(path)
   if (is.na(defaultjar)) {
-    stop("Gama configuration failed!")
+    stop("Gama configuration failed!") # nocov
   }
   else {
     options(gamar.startjar = defaultjar,
@@ -93,11 +93,11 @@ defpath <- function(path, Xmx = "2048m", Xms = "512m") {
             gamar.gama.path = path)
     message("Gama configuration succeed!")
       if (version < 1.8) {
-        stop(
+        stop( #nocov start
           "Gama version should be 1.8 or superior. Please use `setup_gama()` ",
           "to download or setup a new version of GAMA or see ",
           "https://gama-platform.github.io/ to download GAMA")
-      }
+      } #nocov end
   }
 }
 
@@ -135,14 +135,14 @@ is_gama_installed <- function(path = unlist(options("gamar.gama.path"))) {
       packageStartupMessage(
         paste0("-- note that GAMA platform was found at ", pehaps_path, "\n"))
       if (version < 1.8) {
-        packageStartupMessage(
+        packageStartupMessage( #nocov start
           "Gama version should be 1.8 or superior. Please use `setup_gama()` ",
           "to download or setup a new version of GAMA or see ",
-          "https://gama-platform.github.io/ to download GAMA")
+          "https://gama-platform.github.io/ to download GAMA") #nocov end
       } else {
         defpath(pehaps_path)
       }
-    } else {
+    } else { #nocov start
       packageStartupMessage(
         "WARNING: GAMA platform not found! Proceed to the setup")
       packageStartupMessage(
@@ -168,4 +168,4 @@ is_gama_installed <- function(path = unlist(options("gamar.gama.path"))) {
           gamar.Xmx                       = NULL,
           gamar.Xms                       = NULL,
           gamar.gama.path                 = NULL)
-}
+} #nocov end

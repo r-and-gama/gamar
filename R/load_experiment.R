@@ -31,6 +31,14 @@ get_attributes <- function(x) {
     c("tmax", "seed", "gaml", "experiment"))
   out
 }
+# make_df_dic ------------------------------------------------------------------
+make_df_dic <- function(x) {
+  if (is.null(x)) return(list(out = data.frame(NULL), dic = NULL))
+  the_names <- names(x)
+  dic_g2r <- make_dictionary(the_names)
+  names(x) <- dic_g2r
+  list(out = x, dic_g2r = dic_g2r)
+}
 
 # load_experiment --------------------------------------------------------------
 #' Load an experiment from a GAML file
@@ -65,13 +73,6 @@ load_experiment <- function(exp, model) {
   check_experiment(exp, list("info" = out))
 
   # Retrieving information:
-  make_df_dic <- function(x) {
-    if (is.null(x)) return(list(out = data.frame(NULL), dic = NULL))
-    the_names <- names(x)
-    dic_g2r <- make_dictionary(the_names)
-    names(x) <- dic_g2r
-    list(out = x, dic_g2r = dic_g2r)
-  }
   variables <- make_df_dic(get_variables(out))
   parameters <- make_df_dic(get_parameters(out))
   out_attr <- get_attributes(out)

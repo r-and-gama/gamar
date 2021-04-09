@@ -38,10 +38,13 @@ get_width <- function(x, n) {
 #' @noRd
 names_of_left_and_right <- function(x, th) {
   tmp <- sapply(2:length(x), get_width, x = x) > th
-  if (all(tmp)) tmp <- x[c(1, length(x))]
+  if (all(tmp))
+    tmp <- x[c(1, length(x))]
   else {
-    if (all(! tmp)) tmp <- x
-    else tmp <- indexes_first_and_last(x, which(tmp)[1])
+    if (all(!tmp))
+      tmp <- x
+    else
+      tmp <- indexes_first_and_last(x, which(tmp)[1])
   }
   sel <- 1:round(length(tmp) / 2)
   list(tmp[sel], tmp[-sel])

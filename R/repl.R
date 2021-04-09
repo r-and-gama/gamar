@@ -25,9 +25,6 @@ repl.default <- function(exp, times = NULL) "Unknown class"
 #' @rdname repl
 #' @export
 repl.experiment <- function(exp, times = NULL) {
-  if (!is.data.frame(exp))
-    exp <- as.data.frame(exp)
-
   if (is.null(times)) {
     return(exp)
   } else if (is.null(names(times))) {

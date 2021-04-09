@@ -22,31 +22,34 @@
 #' @export
 #'
 plot_params <- function(exp) {
-  if (nrow(exp) == 0) stop("There is no simulation in this experiment")
-  if (nrow(exp) == 1) stop(
-    "There is only one simulation in this experiment so no ")
+  if (nrow(exp) == 0)
+    stop("There is no simulation in this experiment")
+  if (nrow(exp) == 1)
+    stop("There is only one simulation in this experiment so no plot.")
 
   allvar <- sapply(parameters(exp), var)
   allvar <- sort(allvar[ allvar != 0], decreasing = TRUE)
-  if (length(allvar) == 0) return(paste(
-    "There is only one set of parameters for these", nrow(exp), "experiments"))
+  if (length(allvar) == 0)
+    stop(paste0("There is only one set of parameters for these",
+                   nrow(exp), "experiments"))
   worthidx <- grep(paste(names(allvar), collapse = "|"), names(exp))
   topidx <- if (length(worthidx) != 0) {
     worthidx[1:min(3, length(worthidx))]
     } else {
-      0
+      # doubt: already in case length(allvar) == 0
+      0 # nocov
     }
   n <- length(topidx)
 
-  # check n the number of parameters to be plotted
   exp <- as.data.frame(exp)
-  # if n is equal to 0
-  if (n == 0) stop("There is no parameters to plot in this experiment")
-  if (n == 1) stripchart(exp[, topidx[1]], xlab = colnames(exp)[topidx[1]])
-  if (n == 2) scatter2D(exp[, topidx[1]], exp[, topidx[2]],
+  if (n == 1)
+    stripchart(exp[, topidx[1]], xlab = colnames(exp)[topidx[1]])
+  if (n == 2)
+    scatter2D(exp[, topidx[1]], exp[, topidx[2]],
                       xlab = colnames(exp)[topidx[1]],
                       ylab = colnames(exp)[topidx[2]])
-  if (n == 3) scatter3D(exp[, topidx[1]], exp[, topidx[2]], exp[, topidx[3]],
+  if (n == 3)
+  scatter3D(exp[, topidx[1]], exp[, topidx[2]], exp[, topidx[3]],
                         xlab = colnames(exp)[topidx[1]],
                         ylab = colnames(exp)[topidx[2]],
                         zlab = colnames(exp)[topidx[3]],

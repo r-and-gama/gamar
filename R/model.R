@@ -39,10 +39,17 @@ model.experiment <- function(exp) attributes(exp)$model
 #' @rdname model
 #' @importFrom utils capture.output
 #' @export
-`model<-.experiment` <- function(exp, value){
-  model_info <- list("path" = value,
+`model<-.experiment` <- function(exp, value) {
+  if (all(is.character(value), length(value) == 1)) {
+    model_info <- list("path" = value,
                      "info" = read_gaml_experiment(name(exp), value),
                      "md5sum" = md5sum(value))
+  }
+
+  if (all(is.list(value), length(value) == 3)) {
+    model_info <- value
+  }
+  class(value)
   attr(exp, "model") <- model_info
   return(validate_experiment(exp))
 }

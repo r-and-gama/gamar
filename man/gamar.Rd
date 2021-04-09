@@ -3,7 +3,6 @@
 \docType{package}
 \name{gamar}
 \alias{gamar}
-\alias{gamar-package}
 \title{gamar : An R Interface to the GAMA Simulation Platform}
 \description{
 An R Interface to the GAMA Simulation Platform.
