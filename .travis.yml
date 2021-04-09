@@ -13,3 +13,5 @@ addons:
     - libmagick++-dev
 services:
   - xvfb
+after_success:
+  - Rscript -e 'covr::codecov()'

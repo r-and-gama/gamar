@@ -10,3 +10,4 @@
 building_package_and_website
 tidyverse.R
 pkgdown
+^codecov\.yml$
