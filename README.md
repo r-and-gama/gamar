@@ -9,6 +9,7 @@
 status](https://travis-ci.org/r-and-gama/gamar.svg?branch=master)](https://travis-ci.org/r-and-gama/gamar)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/r-and-gama/gamar?branch=master&svg=true)](https://ci.appveyor.com/project/r-and-gama/gamar)
+[![codecov](https://codecov.io/gh/meta00/gamar/branch/master/graph/badge.svg?token=UFOLWW6TJG)](https://codecov.io/gh/meta00/gamar)
 
 `gamar` is an R interface to the [GAMA](https://gama-platform.github.io)
 **agent-based** simulation platform. It allows to
